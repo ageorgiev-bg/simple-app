@@ -36,5 +36,3 @@ aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER }} --region ${{ secrets
 - name: Deploy to EKS
 run: |
 helm install simple-app-0.0.1 --dry-run --debug .
-kubectl apply -f k8s/deployment.yaml
-kubectl apply -f k8s/service.yaml
