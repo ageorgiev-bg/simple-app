@@ -1,0 +1,12 @@
+apiVersion: v1
+name: simple-app
+version: 0.0.1
+appVersion: 0.0.1
+description: A Helm chart for simple NGINX page with ingress
+type: application
+dependencies:
+  - name: nginx-ingress
+    version: "4.11.1"
+    repository: "@stable"
+sources:
+  - https://github.com/ageorgiev-bg/simple-app

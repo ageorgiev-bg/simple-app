@@ -1,0 +1,18 @@
+{{- range $key, $svc := (.Values.services | default dict) }}
+---
+# -- Context set to each dict object
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "simple-app.fullname" $ }}-{{ $key }}
+  labels:
+    {{- include "simple-app.selectorLabels" $ | nindent 4 }}
+spec:
+  type: {{ .type }}
+  selector:
+    {{- include "simple-app.selectorLabels" $ | nindent 4 }}
+  ports:
+    - protocol: {{ .protocol | default "TCP" }}
+      port: {{ .port }}
+      targetPort: {{ $.Values.containerPorts.http }}
+{{- end }}
