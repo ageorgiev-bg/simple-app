@@ -36,4 +36,5 @@ jobs:
 
       - name: Deploy to EKS
         run: |
+          helm list -a -A
           helm install simple-app-0.0.1 --dry-run --debug .
