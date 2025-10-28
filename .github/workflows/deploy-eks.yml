@@ -19,20 +19,20 @@ runs-on: ubuntu-latest
 
 steps:
 - name: Checkout code
-uses: actions/checkout@v4
+  uses: actions/checkout@v4
 
 
 - name: Configure AWS Credentials (OIDC)
-uses: aws-actions/configure-aws-credentials@v4
-with:
-role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-aws-region: ${{ secrets.AWS_REGION }}
+  uses: aws-actions/configure-aws-credentials@v4
+  with:
+  role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+  aws-region: ${{ secrets.AWS_REGION }}
 
 - name: Update kubeconfig
-run: |
-aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER }} --region ${{ secrets.AWS_REGION }}
+  run: |
+  aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER }} --region ${{ secrets.AWS_REGION }}
 
 
 - name: Deploy to EKS
-run: |
-helm install simple-app-0.0.1 --dry-run --debug .
+  run: |
+  helm install simple-app-0.0.1 --dry-run --debug .

@@ -31,4 +31,4 @@ services:
 # Settings related to the NGINX Ingress Controller configuration
 ingressController:
   # -- @param ingressController.ingressClassName Ingress controller defined class
-  ingressClassName: nginx
+  ingressClassName: external-nginx
