@@ -33,7 +33,9 @@ jobs:
       - name: Update kubeconfig
         run: |
           aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER }} --region ${{ secrets.AWS_REGION }}
-          helm list -a -A
+          aws ec2 describe-instances \
+          --query "Reservations[*].Instances[*].InstanceId" \
+          --output table
 
       - name: Deploy to EKS
         run: |
