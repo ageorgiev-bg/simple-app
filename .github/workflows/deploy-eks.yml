@@ -25,7 +25,7 @@ steps:
 - name: Configure AWS Credentials (OIDC)
   uses: aws-actions/configure-aws-credentials@v4
   with:
-  role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+  role-to-assume: ${{ secrets.AWS_ROLE_EKS_OIDC }}
   aws-region: ${{ secrets.AWS_REGION }}
 
 - name: Update kubeconfig
