@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   build-and-deploy:
+    env: dev
     runs-on: ubuntu-latest
 
     steps:
