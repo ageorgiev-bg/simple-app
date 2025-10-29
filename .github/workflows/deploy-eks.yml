@@ -38,4 +38,5 @@ jobs:
         run: |
           helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
           helm dependency build
+          helm template . --debug
           helm install simple-app-0.0.1 . # --dry-run --debug .
