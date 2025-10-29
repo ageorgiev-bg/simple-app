@@ -39,7 +39,7 @@ jobs:
 
       - name: Deploy to EKS
         run: |
-          kubectl version
+          # kubectl version
           aws sts get-caller-identity
           # kubectl config view --minify
           # kubectl get po -A
