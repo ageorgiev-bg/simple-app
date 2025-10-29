@@ -39,4 +39,5 @@ jobs:
 
       - name: Deploy to EKS
         run: |
+          kubectl get po -A
           helm install simple-app-0.0.1 --dry-run --debug .
