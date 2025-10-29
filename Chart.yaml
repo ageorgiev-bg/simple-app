@@ -4,9 +4,9 @@ version: 0.0.1
 appVersion: 0.0.1
 description: A Helm chart for simple NGINX page with ingress
 type: application
-# dependencies:
-#   - name: ingress-nginx
-#     version: "4.11.1"
-#     repository: "@ingress-nginx"
-# sources:
-#   - https://github.com/alexbg-lab/simple-app
+dependencies:
+  - name: ingress-nginx
+    version: "4.11.1"
+    repository: "@ingress-nginx"
+sources:
+  - https://github.com/alexbg-lab/simple-app
