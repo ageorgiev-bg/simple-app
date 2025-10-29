@@ -40,6 +40,7 @@ jobs:
       - name: Deploy to EKS
         run: |
           kubectl version
-          kubectl config view --minify
+          aws sts get-caller-identity
+          # kubectl config view --minify
           # kubectl get po -A
           #helm install simple-app-0.0.1 --dry-run --debug .
