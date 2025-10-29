@@ -6,7 +6,7 @@ A Helm chart for simple NGINX page with ingress
 
 ## Source Code
 
-* <https://github.com/ageorgiev-bg/simple-app>
+* <https://github.com/alexbg-lab/simple-app>
 
 ## Values
 
